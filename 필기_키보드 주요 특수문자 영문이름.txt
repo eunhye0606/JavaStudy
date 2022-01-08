@@ -1,0 +1,77 @@
+■■■■키보드 주요 특수문자 영문이름■■■■
+
+
+
+●『`』 → Grave : 	그래이브
+
+『~』 → Tilde : 	틸드
+
+『!』 → Exclamation Point
+
+『@』 → At Sign, Commercial At : 	엣, 엣 사인
+
+『#』 → Crosshatch, Sharp, Pound Sign
+
+『$』 → Dollar Sign
+
+『%』 → Percent Sign
+
+●●●『^』 → Circumflex : 		썰컴플릭스
+
+●●●『&』 → Ampersand : 		앰퍼샌드
+
+●●『*』 → Asterick :			에스털리스크		
+
+『(』 → Left Parenthesis
+
+『)』 → Right Parenthesis
+
+『()』→ Parenthesis			※복수형 -ses
+
+●●『-』 → Hyphen, Dash, Minus Sign : 		하이픈, 데쉬,마이너스
+
+●●『_』 → Underscore, Underline :			언더스코어, 언더라인, 언더바
+
+『=』 → Equal Sign
+
+『+』 → Plus Sign
+
+●●●『|』 → Vertical Bar : 		버티컬바(비트OR, 논리OR)		※글꼴에 영향
+
+●『[』 → Left Bracket :		브락켓
+
+●『]』 → Right Bracket
+
+●『[]』→Bracket
+
+●●●●●『{』 → Left Brace : 		블래이스
+
+●●●●●『}』 → Right Brace
+
+●●●●●『{}』→ Brace			※복수 형태로 사용하지 않음
+
+『;』 →  Smicolon
+
+『:』 → Colon
+
+●●『"』 →  Quotation Mark : 		더블쿼테이션
+
+●●『'』 → Apostrophe :			싱글쿼테이션
+
+『,』 →  Comma
+
+●『.』 → Period, Full, Stop, Dot : 		닷
+
+●『<』 → Less Than Sign, Left Angle Bracket : 	앵글브락켓
+
+●『>』 → Greater Than Sign, Right Angle Bracket
+
+●『<>』→ Angle Brackets
+
+『/』 → Slash, Virgule
+
+『\』 → Back Slash, Won Sign		※글꼴에 영향
+
+『?』 → Question Mark
+
+『』 → Space
