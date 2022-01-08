@@ -86,7 +86,7 @@ public class Test017
 
 		//결과 출력
 		System.out.println();
-		System.out.println("입력한 문자 : " + ch);
+		System.out.println("입력한 문자 : " + ch); //char -> int -> f -> d 
 		System.out.println("입력한 정수 : " + n);
 	}
 }

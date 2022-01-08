@@ -49,6 +49,9 @@ public class Test015
 	//area = length * height / 2 //이건 정수가 나옴. 실수 기반으로 연산해야함.
 
 	//area = double(length * height /2); // 이건 걍 8.000000이런식
+	//8.0000
+	//7.5
+	
 	area = (double)length * height /2; //하나만 실수로 바꿔.
 	//area = (double)length * height /2.0; //이게 깐지
 
