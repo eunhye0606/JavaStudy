@@ -1,0 +1,20 @@
+readLine();
+
+-BufferedReader로 대기열 읽어오기
+-String 문자열값으로 저장
+-String은 다른 자료형으로 변환 불가!
+
+read();
+-BufferedReader 없어도 됨.
+-값 저장을 아스키코드 int로 !
+
+
+next();
+-Scanner에서 쓰는 대기열 다음거 
+-Scanner은 구분자가 있음!!
+-받는함수
+-다음이 Int값이면 nextInt();
+
+System.in.skip();
+-대기열에 다음문자 스킵
+-엔터는 \r + \n 두 개임.
