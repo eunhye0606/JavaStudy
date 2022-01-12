@@ -15,3 +15,6 @@
 <br>
 ## 2주차
 (1).제어문(if ~ else)
+<br>
+(2).switch문 <br>
+(3).반복문. while , do while, for문 → 과제 많음. 별찍기..
