@@ -37,7 +37,52 @@
 
 public class Test059
 {
-	public static void main(Strint[] args)
+	public static void main(String[] args)
 	{
+		
+      int n=1, m; // n : while에서 사용할 루프 변수
+                  // m : for에서 사용할 루프 변수
+
+      while (n<=10)
+      {
+         System.out.println("n=" +n);
+         n++;
+      }
+
+      System.out.println();
+
+      // 위의 while문을 for문으로 바꾼다.
+
+      for (m=1; m<=10; m++)
+         System.out.println("m=" + m);
+
+
+   
+	
 	}
 }
+
+/*
+n=1
+n=2
+n=3
+n=4
+n=5
+n=6
+n=7
+n=8
+n=9
+n=10
+
+m=1
+m=2
+m=3
+m=4
+m=5
+m=6
+m=7
+m=8
+m=9
+m=10
+계속하려면 아무 키나 누르십시오 . . .
+*/

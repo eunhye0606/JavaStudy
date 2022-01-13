@@ -16,12 +16,46 @@
 ****
 *****
 */
-	
+
+//* 1개찍고 개행
+//* 2개찍고 개행
+//* 3개찍고 개행
+
+// 웅웅~ 개행
+// 쑝쑝!! 별 찍기
 
 public class Test063
 {
 	public static void main(String[] args)
 	{
 
+		int i, j; 
+		for (i=1;i<=5 ;i++ )
+		{
+			System.out.print
+		}
+
+/*
+		int i, j; //-- 별찍기, 개행 루프변수
+
+		for (j = 0;j <=5 ;j++ )
+		{
+			System.out.println();
+
+			for (i = 1;i<=5 ;i++ )
+			{
+				System.out.print("*");
+			}
+		}
+
 	}
 }
+
+/*
+*****
+*****
+*****
+*****
+*****
+*****계속하려면 아무 키나 누르십시오 . . .
+*/
