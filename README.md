@@ -19,3 +19,5 @@
 (2).switch문 <br>
 (3).반복문. while , do while, for문 → 과제 많음. 별찍기..<br>
 (4). :bangbang::bangbang:클래스와 인스턴스 + 전역변수, 지역변수:bangbang::bangbang:
+<br>
+(5). 생성자(디폴트 생성자, 사용자 정의 생성자)
