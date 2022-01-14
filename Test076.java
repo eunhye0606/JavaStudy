@@ -29,6 +29,7 @@
 */
 
 class NumberTest
+
 {
 	int num;
 /*				 // ★ 사용자 정의 생성자가 존재하지 않을 경우
@@ -54,22 +55,24 @@ class NumberTest
 }
 
 
-public Test076
+public class Test076
 {
+
 	public static void main(String[] args)
 	{
-		// NumberTest 클래스 기반의 인스턴스 생성.
-		NumberTest nt1 = new NumberTest();
-		// -- 인스턴스가 생성되는 시점에서
-		//    이와 동시에 선택의 여지 없이 생성자 호출이 이루어진다.
-		//								   ___________
-		//                                 NumberTest()
-		//                                 이런 모양에 메소드 없는데
-		//								   컴파일 에러 안뜸. 
-		//								   자동으로 디폴트 생성자 만듬.
-		
-		//									『사용자 정의 생성자』있으면
-		//									호출됨.
+			// NumberTest 클래스 기반의 인스턴스 생성.
+			NumberTest nt1 = new NumberTest();
+			// -- 인스턴스가 생성되는 시점에서
+			//    이와 동시에 선택의 여지 없이 생성자 호출이 이루어진다.
+			//								   ___________
+			//                                 NumberTest()
+			//                                 이런 모양에 메소드 없는데
+			//								   컴파일 에러 안뜸. 
+			//								   자동으로 디폴트 생성자 만듬.
+											
+			//									『사용자 정의 생성자』있으면
+			//									호출됨.
 
 	}
+
 }
