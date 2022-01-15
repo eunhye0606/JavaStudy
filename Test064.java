@@ -17,17 +17,182 @@
  *******
 *********
 */
-	
 
-public class Test064
+// 1. 9자리수 
+// 2. 별의개수 :ln == 1 , *개수 1개 
+//              ln == 2 , *개수 3개
+//              ln == 3 , *개수 5개
+
+//즉, ln =k, *개수 2k -1 
+// 3. 공백의 개수
+// ln == 1 앞 공백 4개 ln - b = 음수
+// ln == 2 앞 공백 3개
+// ln == 3 앞 공백 2개
+// ln == 4 앞 
+// 
+
+//즉, ln = k , 공백 -k +5
+// 등차수열 일반항 : A는 증가하는 개수(공차, 버블티아님) A*n +B, B는 초항을 위한 상수
+
+// ln = k 번째 행
+// * = s
+// 공백 = b
+
+// 2k -1 = s
+// k = (s + 1) /2 
+
+// -k + 5 = b
+// k = -b + 5
+// (b=1, b<=5, b++)
+
+
+/*public class Test064
 {
 	public static void main(String[] args)
 	{
-		int i,j;
 
-		for (; ; )
+
+		int k; //-- 개행 반복문 루프변수
+		int b; // 공백 반복문 루프변수
+		int s; // 별 반복문 루프변수
+
+		for (줄조건)
 		{
+			for (9자리 글자에 대한 조건.) //_ _ _ _ _ _ _ _ _(b s b)
+			{
+				if (앞공백조건)
+				{
+					System.out.print(" ");
+				}
+				else 
+					if (별조건)
+					{
+					System.out.print("*");
+					}
+					else if(뒤공백조건)
+						System.out.print(" ");
+				
+			}
+			System.out.println();
+
 		}
 
 	}
 }
+*/
+
+/**
+public class Test064
+{
+	public static void main(String[] args)
+	{
+		int k=0; //-- 개행 반복문 루프변수
+		int b; // 공백 반복문 루프변수
+		int s; // 별 반복문 루프변수
+		int l; // 글자개수 변수
+
+//1 for 돌고 2 for 돈다-> 
+
+		for (k=1; k<=5; k++)   //아래 한줄에 대한 조건의 반복
+		{
+			b = 5-k; // 두번째 b = 3 앞공백 개수
+			s = 2*k-1; // s = 3 = 별 개수
+
+			for (l=1; l<=9; l++)// 한줄에 대한 조건  (b  s  b), 아홉글자, 아홉번 돈다. → bbbsssbbb → 의자.
+			{
+				if (l <= b)  //공백의 조건
+				{
+					System.out.print(" ");
+				}
+				else 
+					if (l <= b+s)
+					{
+					System.out.print("*");
+					}
+					else if (l <=b+s+b)
+					{
+						System.out.print(" ");
+					}
+				
+			}
+			System.out.println();
+
+		}
+
+	}
+}
+**/
+
+
+/***
+public class Test064
+{
+	public static void main(String[] args)
+	{
+
+
+		int k; //-- 개행 반복문 루프변수
+		int b; // 공백 반복문 루프변수
+		int s; // 별 반복문 루프변수
+
+		for (k=1;k<=5;k++)
+		{
+			for (b=4;b>=0;b--) //첫 1 b = 4,3,2,1,0  → 4,3,2,1 → 음수  " " 0 이면 *
+
+							   //2줄  b = 4,3,2,1,0
+			{
+				if (k-b<0) 
+				{
+					System.out.print(" ");
+				}
+				else // ln - b =0
+					if (k - b>=0)
+					{
+					System.out.print("*");
+					}
+					else
+						System.out.print(" ");
+			}
+			System.out.println();
+
+		}
+
+	}
+}
+***/
+
+/****
+public class Test064
+{
+	public static void main(String[] args)
+	{
+
+
+		int k; //-- 개행 반복문 루프변수
+		int b; // 공백 반복문 루프변수
+		int s; // 별 반복문 루프변수
+
+		for (ln=1;ln<=5 ;ln++ )
+		{
+			for (b=1;b>=0 ;b++ )
+			{
+				if (ln-b<0)
+				{
+					System.out.print(" ");
+				}
+				else 
+					if (ln -b >=0)
+					{
+					System.out.print("*");
+					}
+					else
+						System.out.print(" ");
+				
+			}
+			System.out.println();
+
+		}
+
+	}
+}
+****/
