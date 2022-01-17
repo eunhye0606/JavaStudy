@@ -46,31 +46,33 @@
 // (b=1, b<=5, b++)
 
 
-/*public class Test064
+public class Test064
 {
 	public static void main(String[] args)
 	{
-
-
-		int k; //-- 개행 반복문 루프변수
+		int k=0; //-- 개행 반복문 루프변수
 		int b; // 공백 반복문 루프변수
 		int s; // 별 반복문 루프변수
+		int l; // 글자개수 변수
 
-		for (줄조건)
+//방법 ②. 9자리 자릿수에 공백과 별 넣기. + 뒤에 공백은 안찍어도 됨.
+// 최종!!!!!!!!!!
+
+		for (k=1; k<=5; k++)   //아래 한줄에 대한 조건의 반복
 		{
-			for (9자리 글자에 대한 조건.) //_ _ _ _ _ _ _ _ _(b s b)
+			b = 5-k; // 두번째 b = 3 앞공백 개수
+			s = 2*k-1; // s = 3 = 별 개수
+
+			for (l=1; l<=9; l++)// 한줄에 대한 조건  (b  s  b), 아홉글자, 아홉번 돈다. → bbbsssbbb → 의자.
 			{
-				if (앞공백조건)
+				if (l<=b) 
 				{
 					System.out.print(" ");
 				}
-				else 
-					if (별조건)
-					{
+				else if (l<=b+s)
+				{
 					System.out.print("*");
-					}
-					else if(뒤공백조건)
-						System.out.print(" ");
+				}
 				
 			}
 			System.out.println();
@@ -79,9 +81,21 @@
 
 	}
 }
+/*
+실행 결과
+
+    *
+   ***
+  *****
+ *******
+*********
+계속하려면 아무 키나 누르십시오 . . .
 */
 
-/**
+
+
+//방법 ①. 9자리 자릿수에 공백과 별 넣기.
+/*
 public class Test064
 {
 	public static void main(String[] args)
@@ -121,7 +135,118 @@ public class Test064
 
 	}
 }
+*/
+
+/*
+방법① . 실행결과
+
+    *
+   ***
+  *****
+ *******
+*********
+계속하려면 아무 키나 누르십시오 . . .
+*/
+
+//공백 4,3,2,1,0 감소  
+//별 1,3,5,7,9 증가
+
+
+
+/*
+public class Test064
+{
+	public static void main(String[] args)
+	{
+		int ln; // 개행 반복문 루프변수
+		int b; // 공백 반복문 루프변수
+		       // 공백찍고 별찍고 개행.
+		int s; // 별찍는 개수 증가하는 루프변수 1,3,5,7,9...
+
+		for (ln =1 ;ln <= 5 ;ln++ )
+		{
+			for (b = 5 ;b>=0 ;b-- )		
+										//공백 4번
+										// ln =1 ,b= 4 , ln - b = -3	" "
+										// ln =1 ,b= 3 , ln - b = -2    " " 
+										// ln =1 ,b= 2 , ln - b = -1    " "
+										// ln =1 ,b= 1 , ln - b = 0     " "
+										// ln =1 ,b= 0 , ln - b = 1      *
+
+
+										//공백3번
+										//  ln =2 ,b= 4 , ln - b = -2	" "
+										//  ln =2 ,b= 3 , ln - b = -1	" "
+										//  ln =2 ,b= 2 , ln - b = 0    " "
+										//  ln =2 ,b= 1 , ln - b = 1     *
+
+										 //ln = 1 ,s = 9 ln - s = -8        
+										 //ln = 1, s = 7 ln - s = -6
+										 //ln = 1, s = 5 ln - s = -4
+										 //ln = 1, s = 3 ln - s = -2
+										 //ln = 1, s = 1 ln - s = -0
+
+						
+										
+			{
+				if (ln - b <0)              //-3,-2,-1,0 → 4번 공백.
+				{
+					System.out.print("뀨 ");
+				}
+				else 
+				{
+					for (s= 9 ;s >=1 ;s -=2 )
+					{
+						if (ln - s <=0)
+						{
+							System.out.println("*");// 별 1,3,5,7,9개 찍기.
+						}
+					}
+				}
+			}
+			System.out.println();
+		}
+	}
+}
+*/
+												
+
+/**public class Test064
+{
+	public static void main(String[] args)
+	{
+
+
+		int k; //-- 개행 반복문 루프변수
+		int b; // 공백 반복문 루프변수
+		int s; // 별 반복문 루프변수
+
+		for (줄조건)
+		{
+			for (9자리 글자에 대한 조건.) //_ _ _ _ _ _ _ _ _(b s b)
+			{
+				if (앞공백조건)
+				{
+					System.out.print(" ");
+				}
+				else 
+					if (별조건)
+					{
+					System.out.print("*");
+					}
+					else if(뒤공백조건)
+						System.out.print(" ");
+				
+			}
+			System.out.println();
+
+		}
+
+	}
+}
 **/
+
+
 
 
 /***
