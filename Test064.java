@@ -51,9 +51,9 @@ public class Test064
 	public static void main(String[] args)
 	{
 		int k=0; //-- 개행 반복문 루프변수
-		int b; // 공백 반복문 루프변수
-		int s; // 별 반복문 루프변수
-		int l; // 글자개수 변수
+		int b; // 공백 
+		int s; // 별 
+		int l; // 글자개수 변수 루프변수
 
 //방법 ②. 9자리 자릿수에 공백과 별 넣기. + 뒤에 공백은 안찍어도 됨.
 // 최종!!!!!!!!!!
