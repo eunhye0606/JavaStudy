@@ -60,26 +60,25 @@ public class Test065
 		*/
 		
 
-		for (ln = 1;ln <= 5 ;ln ++ )
+
+		for (ln=1;ln<=5 ;ln++ ) //첫번째 줄 ~ 다섯번째 줄까지 반복.
 		{
 			s = -2*ln + 11;  //9,7,5,3,1
-			b = -ln + 1;     //0,1,2,3,4
+			b = ln - 1;     //0,1,2,3,4
 
-			for (ln=1;ln<=5 ;ln++ ) //첫번째 줄 ~ 다섯번째 줄까지 반복.
+			for (x=1;x<=9 ;x++ ) //_ _ _ _ _ _ _ _ _ 
 			{
-				for (x=1;x<=9 ;x++ ) //_ _ _ _ _ _ _ _ _ 
-				{
-					if (x<=b) // 두번째줄을 예시로 들자면      b_ s_ s_ s_ s_ s_ s_ s_ b_
-					{                                //        x =1 b =1 s =7       s+b =8
-						System.out.print(" ");
-					}
-					else if (x<=b+s)
-					{
-						System.out.print("*");
-					}
+				if (x<=b) // 두번째줄을 예시로 들자면      b_ s_ s_ s_ s_ s_ s_ s_ b_
+				{                                //        x =1 b =1 s =7       s+b =8
+					System.out.print(" ");
 				}
-				System.out.println();
+				else if (x<=b+s)
+				{
+					System.out.print("*");
+				}
 			}
+			System.out.println();
+			
 		}
 	}
 }
