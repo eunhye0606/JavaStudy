@@ -36,12 +36,32 @@
 
 //전체 자리 : s+2*b
 
-
-
-
-
-
 public class Test065
+{
+	public static void main(String[] args)
+	{
+		int ln;
+		int s;
+		int b;
+		for (ln=1;ln<=5 ;ln++ )
+		{
+			for (b=0;b<=ln-2 ;b++ )
+			{
+				System.out.print(" ");
+			}
+			for (s=9;s<=ln;s-- )
+			{
+				System.out.print("*");
+			}
+		System.out.println();
+		}
+	}
+}
+
+
+
+
+/*public class Test065
 {
 	public static void main(String[] args)
 	{
@@ -51,13 +71,13 @@ public class Test065
 		int s; // 별
 		int b; // 앞공백
 		
-		/*
-		첫줄 : s=9 , b=0
-		두줄 : s=7 , b=1
-		세줄 : s=5 , b=2
-		네줄 : s=3 , b=3
-		다섯줄: s=1 ,b=4
-		*/
+		
+		//첫줄 : s=9 , b=0
+		//두줄 : s=7 , b=1
+		//세줄 : s=5 , b=2
+		//네줄 : s=3 , b=3
+		//다섯줄: s=1 ,b=4
+		
 		
 
 		for (ln = 1;ln <= 5 ;ln ++ )
@@ -86,3 +106,4 @@ public class Test065
 		}
 	}
 }
+*/
