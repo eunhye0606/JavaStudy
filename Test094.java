@@ -27,12 +27,19 @@ public class Test094
 	{
 
 		//배열의 배열을 구성
-
+		char [][] arr = new [5][5];
 		//배열에 값 넣기
 		//①배열안에는 char 자료형이 들어간당
 		//②A=65 ~ 
 		//[00]~[04] → [10]~[14] →[24]~[44] → [34]~[44] →[40]~[44]
 
+
+
 		//배열 전체 요소 출력
+		for (int i = 0;i <arr.length ;i++ )
+		{
+			System.out.printf("%4c",arr[i]);
+		}
+		System.out.println();
 	}
 }
