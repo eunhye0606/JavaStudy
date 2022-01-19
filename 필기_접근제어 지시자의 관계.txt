@@ -1,0 +1,46 @@
+
+              ■■■접근제어 지시자의 관계■■■
+
+지시자	 클래스 내부    동일패키지    상속받은 클래스    이외의 영역
+
+private      O              X               X                X
+
+default      O              O               X                X
+
+protected    O              O               O                X
+
+public       O              O               O                O
+
+            <접근제어의 허용범위>
+※ public > protected > defalt > private
+   넓다                           좁다
+
+①   접근제어 지시자를 아무것도 붙히지 않으면 default이다.
+
+②   default vs protected 
+     『상속받은 클래스』
+
+ex) public class Test000
+    ______
+    접근제어지시자
+
+{
+	public static void main(String[] args)
+	{
+		(default) int a;
+		_________
+		접근제어지시자
+	}
+}
+
+// 패키지?
+// 논리적 명시
+package 폴더1. 폴더A;
+
+public clas Test000
+{
+}
+
+
+//물리적으로 시각화
+폴더1 > 폴더 A > Test000.java
