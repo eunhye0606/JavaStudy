@@ -56,6 +56,7 @@ class RpsGame
 		com = rd.nextInt(3) + 1; // next(3) → 0 ~ 2까지니까. +1해서 1 ~ 3으로
 		//System.out.println(com);
 		//return com;
+		System.out.println("리얼리 컴퓨터 값은 : " +com);
 
 
 	}
@@ -64,9 +65,15 @@ class RpsGame
 	{
 		//int com = nansu(); //난수 메소드 호출.
 		int result=-1; // 유저가 이기면 1 지면 0 담을 변수
-		if (nUser >com)
+		if (nUser >com) // user == 3(보), com == 2(주먹)
+						// user == 3, com == 1(가위)
 		{
-			result = 1;
+			if (nUser ==3 && com ==1) // 보일때.
+			{
+				result = 0;
+			}
+			else 
+				result = 1;
 		}
 		else if (nUser < com)
 		{
