@@ -151,6 +151,7 @@ public class Sungjuk
 	//③ 결과 출력
 	public void print()
 	{
+		ranking(); //같은 클래스라서 그냥 부름 호출! 
 		//System.out.printf("\n%5s %4s %4s %4s %5s %10s\n","이름","국어점수","영어점수","수학점수","총점","평균");
 		for (int i =0;i<inwon ;i++ )
 		{
@@ -167,7 +168,7 @@ public class Sungjuk
 			System.out.printf("%8.2f",rec[i].avg);
 
 			//석차 출력
-			ranking();
+			System.out.printf("%5d",rec[i].rank);
 
 			System.out.println();
 		}
@@ -183,8 +184,131 @@ public class Sungjuk
 		*/
 
 		//+④ 석차 산출 메소드 추가
+		//   - 석차 산출 과정에서 연산에 필요한 데이터 이미 존재하는 상황
+		//   - Record 배열의 rank 변수(속성)을 초기화 기능 수행 → 반환 자료형 void.
+		//   - 클래스 내부에서 활용할 메소드 정의라서 → 접근제어지시자 private
+
+		// 전역변수가 왜 0이 되는지 찾기!!!!!!!!
 	private void ranking() // 외부에서 안씀. 같은 클래스 print만씀.
 	{
+		//모든 학생들의 등수(석차, rank)를 1로 초기화 
+		for (int i = 0;i<inwon ;i++ )
+			rec[i].rank = 1;
+
+		// 등수 산출
+		for (int i =0 ;i<inwon-1 ;i++ ) // -- 웅~ → 비교기준!
+										// 비교대상이 3개면 01까지 .왜냐면 2는 대상임. 1이랑 2랑 비교
+		{
+			for (int j =i+1;j<inwon ;j++ ) //-- 쑝쑝 비교대상! //이해하기!!!!!!!!!!
+										   // 아 ! 마지막 인덱스는 inwon -1임ㅋㅋ
+			{							   // 헷갈리지좀 마 ~ 
+				//비교기준의 평균 > 비교대상의 평균
+				// 비교대상 rank +1
+				if (rec[i].avg > rec[j].avg)
+				{
+					rec[j].rank ++;
+				}
+				
+				//비교기준의 평균 < 비교대상의 평균
+				//비교기준 rank + 1
+				else if (rec[i].avg <= rec[j].avg) // <=안해도됨. 그거 아닐때는 그냥 넘어가서.
+				{
+					rec[i].rank++;
+				}
+					
+
+			}
+		}
+		
+
+
+
+
+
+
+
+
+
+
+
+
+		// 내가 틀린 이유 : i-1이랑 i+1이랑비교안함ㅋ
+		//다시해보면 되려나 모르겠네 ㅅㅂ
+		
+		// 88 100 1  20
+		// 100 기준으로 i-1보다 크면 n + 0
+		// i + 1 보다 크면 n+ 0
+		// 기준점이 80이면
+		// i -1이 없음
+		// i +1 은 100 크면 n+0
+		//             작으면 n+1
+		//
+		/*
+		int n =1;
+		for (int i= 0;i < inwon ;i++ )
+		{
+			rec[i].rank = 1;
+		}
+
+		for (int i =1;i<inwon-1 ;i++ )
+			// __ __ __
+		{
+			if (rec[i-1].tot > rec[i].tot)
+			{
+				rec[i].rank ++;
+			}
+			else if (rec[i-1].tot <= rec[i].tot)
+			{
+				rec[i-1].rank ++;
+			}
+				
+
+			else if (rec[i].tot>rec[i+1].tot)
+			{
+				rec[i+1].rank ++;
+			}
+			else if (rec[i].tot <= rec[i+1].tot)
+			{
+				rec[i].rank ++;
+			}
+		}
+			*/
+				
+			
+		
+	}
+}
+
+
+		
+		/*
+		String [] strArr = new String [inwon];
+		// -- 학생 이름으로 배열에 담자구 ~ !
+		//    이 배열에 맨앞은 1등으로 할구야!
+
+
+		//총점으로 비교
+		// 만약 3명의 학생이면 1,2,3등 나오게
+		for (int i= 0;i<inwon ;i++ )
+		{
+			if (rec[i].tot > rec[i+1].tot)
+			{
+				strArr[i] = rec[i].name;
+
+			}
+			else 
+				strArr[i] = rec[i+1].name;
+
+			
+			//rec[0]은 첫번째 학생이니까
+			//rec[inwon-1]이 마지막 학생
+			// 얘네 비교해서 새로운 배열에 넣자.
+			//그리고 새 배열 arr[0]이면 j = 0부터 시작해서
+			// arr[j] = j+1등 인걸루.. 
+
+		}
+		return String[];
+		/*
 		//int rank; //-- 석차 123등 담는 변수
 		int [] rank = new int [inwon];
 		int n=1;
@@ -217,10 +341,8 @@ public class Sungjuk
 		{
 			System.out.printf("%4d",rank[i]);
 		}
+		*/
 			
-	}
-	
-}
 
 
 
