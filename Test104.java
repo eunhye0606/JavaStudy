@@ -26,7 +26,82 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.util.Random;
 
+class RpsGame
+{
+	private int user;
+	private int com;
 
+	// 컴퓨터의 가위바위보
+	private void runCom()
+	{
+		Random rd = new Random();
+		com = rd.nextInt(3) + 1; 
+	}
+	//유저의 가위바위보
+	public void input()
+	{
+		//유저가 가위바위보 전에 컴퓨터 먼저
+		runCom();
+
+		Scanner sc = new Scanner (System.in);
+
+		do
+		{
+			System.out.print("1: 가위 2바위 3보 중 입력 (1~3): ");
+			user = sc.nextInt();
+		}
+		while (user<1 || user>3);
+	}
+
+	//중간 결과 출력
+	public void middleCals()
+	{
+		String[] str = {"가위", "바위" , "보"};
+
+		System.out.println();
+		System.out.println(" - 유저 : " +str[user-1]);
+		System.out.println(" - 컴퓨터 : " +str[com-1]);
+	}
+
+	//승부에 대한 최종 결과 연산
+	public String resultCalc()
+	{
+		String result = "무승부 상황입니다 ~!!!";
+
+		if ((user ==1 && com ==3) || (user ==2 && com ==1)||(user==3 && com ==2))
+		{
+			result = "당신이 승리했습니다 ~!!!";
+		}
+		else if ((user ==1 && com ==2) || (user ==2 && com ==3) || (user ==3 && com ==1))
+		{
+			result = "컴퓨터가 승리했습니다 ~!!!";
+		}
+		return result;
+	}
+
+	// 결과 출력
+	public void print(String str)
+	{
+		//String a = resultCalc();
+		System.out.printf("\n >> 승부 최종 결과 : %s\n", str);
+	}
+}
+
+public class Test104
+{
+	public static void main(String[] args) throws IOException
+	{
+		RpsGame rps = new RpsGame();
+
+		rps.input();
+		rps.middleCals();
+		String result = rps.resultCalc();
+		//rps.nansu();
+		rps.print(result);
+	
+	}
+}
+/*
 class RpsGame
 {
 	//RpsGame이 가지는 변수(속성)
@@ -141,3 +216,4 @@ public class Test104
 	
 	}
 }
+*/
