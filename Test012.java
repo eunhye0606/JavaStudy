@@ -67,6 +67,8 @@ public class Test012
 
 		System.out.printf("넓이 : %f.9\n", area); // --> 포맷팅 권법, %랑 f 사이에 소숫점 자리 ~ 까지 표기.
 		System.out.format("넓이 : %.2f%n" , length);
+
+
 	}
 }
 

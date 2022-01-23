@@ -23,7 +23,7 @@ public class Test021
 		int k, e, m, sum;
 
 
-		// System.out.println("\"); -->컴파일에러
+		// System.out.println("\"); //-->컴파일에러
 		// 왜냐면 자바는 \이거 보고 아 ~ \s ? \d? 이러고 있음.
 		// 그래서 \이거 문자로 쓰고 싶으면 \\두개~
 

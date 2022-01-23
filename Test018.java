@@ -64,7 +64,6 @@ public class Test018
 		//System.out.printf("%d\n",'A');
 		//처리가 아니라 표현이니까 아스키문자 - int 아니야
 		//런타임 에러 돼
-
 		
 		//문자는 %c, 문자열은 %s
 		System.out.printf("%c\n",'4');
