@@ -75,6 +75,40 @@ public class Test111
 		System.out.println();
 
 		// 향상된 Bubble Sorted
+		int pass =0;
+		boolean flag;
+
+		do	//-- do ~ while 쓰는 이유, 1회전은 반드시함. break를 안해도됨.
+		{
+			flag = false; // 이번 회전에서는 자리 바꿈이 일어나지 않을 것이다...
+			pass ++;
+		
+			for (int i = 0;i<a.length-pass ;i++ )	//반복문하나로 버블Sort만들기!
+			{
+				//System.out.println("쑝");
+				if (a[i] > a[i+1])
+				{
+					// 자리 바꾸기.
+					a[i] = a[i]^a[i+1];
+					a[i+1] = a[i+1]^a[i];
+					a[i] = a[i]^a[i+1];
+				
+					flag = true;
+					// -- 단 한번이라도 스왑(자리바꿈)이 발생하게 되면
+					//    flag 변수는 true로 변경..!!
+				}
+			}
+		}
+		while (flag);
+		// -- flag 변수가 false 라는 것은
+		//    회전이 구분적으로 발생하는 동안 스왑이 일어나지 않은 경우로
+		//    더 이상의 반복문 수행은 무의미한 것으로 판단 가능
+
+
+
+
+
+		/* 내코드
 		int i,j;
 		boolean sw=false; //-- 스왑 발생 판단. false이면 스왑 발생 ㄴㄴ
 
@@ -106,6 +140,7 @@ public class Test111
 				}
 				
 		}
+		*/
 
 
 
@@ -122,3 +157,9 @@ public class Test111
 
 	}
 }
+
+/*
+Source Data : 10 50 20 30 40
+Sorted Data : 10 20 30 40 50
+계속하려면 아무 키나 누르십시오 . . .
+*/

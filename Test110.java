@@ -61,7 +61,24 @@ public class Test110
 			System.out.print(n + " ");
 		System.out.println();
 
+
+		//Bubble Sort (for문 한개만)
+		// i 는 뒤에 빼주는 용도임! 다시 ㅠㅠ for 문 하나에 변수 두개 넣는법
+		int pass =0;
+		
+		for (i = 0;i<a.length-pass ;i++ )	//반복문하나로 버블Sort만들기!
+		{
+			if (a[i] > a[i+1])
+			{
+				// 자리 바꾸기.
+				a[j] = a[j]^a[j+1];
+				a[j+1] = a[j+1]^a[j];
+				a[j] = a[j]^a[j+1];
+			}
+		}
+
 		//Bubble Sort (답)
+		/*
 		int i,j;
 
 		for (i=1;i<a.length ;i++ ) // 뒤에서 비교 대상을 하나씩 줄여주는 역할
@@ -78,6 +95,7 @@ public class Test110
 				}
 			}
 		}
+		*/
 
 
 		//Bubble Sort
