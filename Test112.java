@@ -37,15 +37,149 @@ public class Test112
 {
 	public static void main(String[] args) throws IOException
 	{
-		int inwoon; // -- 학생 수를 담을 변수
-		int score; // -- 점수 담을 변수
+		int inwon; // -- 학생 수를 담을 변수
+		int [] score; // -- 점수 담을 변수
+		String [] name; // -- 이름 담을 배열
+		
+
+
+
+
+
+
+		//Scanner 기반 인스턴스 생성
+		Scanner sc = new Scanner(System.in);
 
 		do
 		{
 			System.out.print("인원 수 입력: ");
-			inwoon = System.in.read();
+			inwon = sc.nextInt();
+			//System.out.println(inwoon);
 		}
-		while (inwoon>1);
+		while (inwon<1);
+
+		score = new int [inwon];
+		name = new String [inwon];
+	
+
+		for (int i = 0;i<inwon ;i++ )
+		{
+			System.out.printf("이름 점수 입력(%d, 공백 구분) : ",i+1);
+			name[i] = sc.next();
+			score[i] = sc.nextInt();
+
+		}
+		System.out.println();
+
+		for (int i = 0;i<name.length ;i++ )
+		{
+			System.out.printf("점수 : %2d\t", score[i]);
+			System.out.printf("이름 : %s\n", name[i]);
+
+		}
+		System.out.println();
+
+		//점수로 정렬 내림차순.
+		//①선택정렬 
+		/*
+		90 80 75 85 95
+		== --
+		90 80 75 85 95
+		==    --
+		90 80 75 85 95
+		==       --
+		95 80 75 85 90 
+		==          --
+		------------------1회전
+		95 80 75 85 90 
+		   == --
+		95 85 75 80 90 
+		   ==    --
+		95 90 75 80 85
+		   ==       --
+		-------------------2회전
+		.
+		.
+		.
+
+		*/
 		
+		/*
+		for (int i = 0;i<score.length-1 ;i++ )
+		{
+			for (int j = i+1;j<score.length ;j++ )
+			{
+				if (score[i] < score[j])
+				{
+					//자리바꾸기
+					score[i] = score[i]^score[j];
+					score[j] = score[j]^score[i];
+					score[i] = score[i]^score[j];
+					System.out.println("선택정렬!");
+
+				}
+			}
+		}
+		*/
+
+		
+
+		//②버블정렬
+		/*
+		90 80 75 85 95    01     j vs j+1
+		== --
+		90 80 75 85 95    12
+		   == --
+		90 80 85 75 95    23
+		      == --
+		90 80 85 95 75    34     j <4   
+		         == --
+		----------------1회전    
+		90 80 85 95 75    01
+		== --
+		90 85 80 95 75    12
+		   == --
+		90 85 95 80 75    23      j<3
+		      == --
+		----------------2회전
+		                  01
+
+						  12      j<2
+
+
+						  01      j<1
+		.
+		.
+
+
+		.
+		*/
+		/*
+		for (int i = 1;i<score.length ;i++ )
+		{
+			for (int j = 0;j<score.length-i ;j++ ) // 
+			{
+				if (score[j] < score[j+1])
+				{
+					//자리바꾸기
+					score[j] = score[j]^score[j+1];
+					score[j+1] = score[j+1]^score[j];
+					score[j] = score[j]^score[j+1];
+					System.out.println("버블정렬!");
+				}
+
+			}
+		}
+		*/
+
+
+
+		//정렬된 점수를 출력해 볼게요!
+		System.out.print("내림차순으로 정렬된 점수들!");
+		for (int i = 0;i<score.length ;i++ )
+		{
+			System.out.printf("%4d",score[i]);
+		}
+		System.out.println();
 	}
 }

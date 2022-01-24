@@ -42,7 +42,7 @@ public class Test058
 	{
 
 
-/*
+
 		Scanner sc = new Scanner(System.in);
 
 		int nUser; //사용자 입력 값
@@ -69,7 +69,7 @@ public class Test058
 
 	}
 }
-*/
+
 
 /*
 정수1 입력 : 3
