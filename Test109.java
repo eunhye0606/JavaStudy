@@ -17,6 +17,7 @@
 */
 
 // 선택 정렬(Selection Sort)
+// 하나를 기준으로 비교해간다~1
 
 // 실행 예)
 // Source Data : 52 42 12 62 60
@@ -84,6 +85,22 @@ public class Test109
 	
 
 		// Selection Sort
+		for (i=0;i<a.length ;i++ ) // 웅웅 ~~비교기준데이터 0 1 2 3 //// 52,~,60까지만
+		{
+			for (j=i;j<a.length ;j++ ) //쑝쑝~!!!! 비교대상데이터  1234 234 34 4
+			{
+				if (a[i] < a[j])			//if (a[i] > a[j]) //오름차순 정렬
+				{
+					//자리바꾸기
+					a[i] = a[i]^a[j];
+					a[j] = a[j]^a[i];
+					a[i] = a[i]^a[j];
+				}
+
+			}
+		}
+
+
 		/*
 		System.out.print("Sorted Data : " );
 		for (i=0;i<a.length ; i++)
