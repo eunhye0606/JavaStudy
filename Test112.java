@@ -31,19 +31,21 @@
 
 
 import java.util.Scanner;
+import java.io.IOException;
 
 public class Test112
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
 		int inwoon; // -- 학생 수를 담을 변수
 		int score; // -- 점수 담을 변수
+
 		do
 		{
 			System.out.print("인원 수 입력: ");
 			inwoon = System.in.read();
 		}
-		while ();
+		while (inwoon>1);
 		
 	}
 }
