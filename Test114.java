@@ -92,9 +92,158 @@
 // 삼국지전편							super.삼국지전편    
 // (내가 원래 갖고 있던 것)				(부모님으로부터 물려받은 것)
 
+
+//Rect114, Circle114의 부모 클래스
+// → 이건 다중상속 X
+//    자바에서는 상속 : 우리 부모님은 누구야~ 
+class SuperTest114
+{
+	protected double area;
+	private String title;
+
+	public SuperTest114()
+	{
+		System.out.println("SuperTest114 ... 인자 없는 생성자");
+	}
+
+	public SuperTest114(String title)
+	{
+		this.title = title;
+		System.out.println("SuperTest114 ... 문자열을 인자로 받는 생성자");
+	}
+	public void write()
+	{
+		System.out.println(title + " - " + area);
+	}
+}
+
+// SuperTest114 클래스를 상속받는 자식 클래스 ( 단일 상속 )
+class Rect114 extends SuperTest114
+{
+	/* 1. 그대로 물려받기
+	   2. 생성자는 상속의 대상에서 제외.
+	   3.private 멤버는 접근 불가
+
+	protected double area;
+	---------
+	물려줌.
+
+	private String title;
+
+	public void write()
+	{
+		System.out.println(title + " - " + area);
+	}
+	
+	*/
+	private int w, h;
+
+	//자식 클래스의 사용자 정의 생성자
+	public Rect114()
+	{
+		// 부모의 생성자 호출
+		//SuperTest114(); // -- 이거 불가
+		super();
+	}
+	public void calc(int w, int h) // -- 지역변수
+	{
+		this.w = w; // -- 왜 this가 붙냐면 여기서 보여주는 w는 두개라. 넘겨받은 w로 멤버변수를 초기화한다.
+		this.h = h;
+		area = (double)this.w + this.h;
+		//     ---------------
+		//                   ---
+
+		write();
+	}
+	@Override //-- 어노테이션(annotation) - metadata - JDK 1.5
+	          //   컴파일해도 사라지지 않는 주석
+	public void write()
+	{
+		System.out.println("w : " + w + " , h : " + h );
+		System.out.println("사각형 -  "  + area);
+	}
+
+	// ※ 메소드 오버라이딩(Method Overriding)
+	//    
+	//    상위 클래스를 상속받은 하위 클래스에서
+	//    상위 클래스에 정의된 메소드를 다시 정의하는 것으로(재정의)
+	//    객체 지향 프로그래밍의 특징인 다형성을 나타낸다.
+	//    재정의(Overriding)는 반드시 상속 관계에 있어야 하며,
+	//    메소드 이름, 리턴 타입, 매개변수의 갯수나 타입이
+	//    완전히 일치해야 한다.
+}
+
+// SuperTest114 클래스를 상속받는 자식 클래스 ( 단일 상속 )
+class Circle114 extends SuperTest114
+{
+/*
+	   1. 그대로 물려받기
+	   2. 생성자는 상속의 대상에서 제외.
+	   3.private 멤버는 접근 불가
+
+	protected double area;
+	---------
+	물려줌.
+
+	private String title;
+
+	public void write()
+	{
+		System.out.println(title + " - " + area);
+	}
+*/
+
+	//자식 클래스의 사용자 정의 생성자
+	public Circle114(String title)
+	{
+		//super();
+		super(title);
+	}
+	public void calc(int r)
+	{
+		area = r * r * 3.141592;
+		write(); // -- 부모가 준 메소드 호출.
+		//this.write()
+		//super.write() 
+		// 세개가 말하는 메소드가 물려받은거 하나임.
+	}
+}
+
+// main() 메소드를 포함하고 있는 외부의 다른 클래스
 public class Test114
 {
 	public static void main(String[] args)
 	{
+		Rect114 ob1 = new Rect114();
+		//--==>> SuperTest114 ... 인자 없는 생성자
+
+		//Circle114 ob2 = new Circle114();
+		// --==>> 에러 발생(컴파일 에러)
+		// -- 현재 Circle114 클래스에는
+		//    매개변수를 필요로하는 사용자 정의 생성자가 만들어져 있으며
+		//    이로 인해 default 생성자가 자동으로 삽입되지 않는 상황
+
+		ob1.calc(10,5);
+		//--==>>w : 10 , h : 5
+		//      사각형 -  15.0
 	}
 }
+/*
+==========================================================================
+상위 클래스		|	하위 클래스		 | 결과
+--------------------------------------------------------------------------
+생성자를	    |생성자 정의 안함    |→ 가능하다.
+정의하지        |인수가 없는 생성자  |→ 가능하다.
+않음		    |인수가 있는 생성자  |→ 가능하다.
+--------------------------------------------------------------------------
+인수가	        |생성자 정의 안함    |→ 가능하다.
+없는			|인수가 없는 생성자  |→ 가능하다.
+생성자만 정의   |인수가 있는 생성자  |→ 가능하다.
+--------------------------------------------------------------------------
+인수가			|생성자 정의 안함    |→ 에러 발생.
+있는			|인수가 없는 생성자  |→ 상위 클래스의 해당 생성자를 호출하지 않으면 에러 발생. super(10)이면 가능.
+생성자만 정의   |인수가 있는 생성자  |→ 상위 클래스의 해당 생성자를 호출하지 않으면 에러 발생. super(10)이면 가능.
+==========================================================================
+*/
+// 상위 클래스에 인수가 있는 생성자 정의 : 사용자 정의 생성자가 있다면
+// 하위 클래스는 무족권 사용자 정의 생성자임. 일단.
