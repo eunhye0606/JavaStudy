@@ -91,8 +91,65 @@ abstract class SortInt117
 
 //SortInt117 ( 추상 클래스 ) 를 상속 받은 클래스 → 일단은 추상 클래스
 // → 추상 메소드 (abstract)를 재정의 (Method Overriding) 하면 
+//     클래스의 역할 가능하다.
 public class Test117 extends SortInt117
 {
+	int i, j;
+
+	static int [] data = { 7, 8, 3, 8, 7};
+	
+	@Override
+	protected void sorting()
+	{
+
+	// 정의 → 완성
+
+	//selection sort
+		for (i = 0;i<dataLength()-1 ;i++ )
+		{
+			for (j = i+1;j<dataLength() ;j++ )
+			{
+				// 크기비교
+				if (compare(i,j)>0)
+				{
+					//자리바꿈
+					swap(i,j);
+				}
+			}
+		}
+	}
+
+
+	
+
+
+	public static void main(String[] args)
+	{
+
+		System.out.print("Source Data: " );
+		for (int n:data)
+			System.out.print(n + " " );
+		System.out.println();
+		
+
+		// 클래스(설계도)에서 오버라이딩해서 쓸만하게 해뒀으니
+		// 클래스 역할 가능. 인스턴스 생성 가능
+		Test117 ob = new Test117();
+
+		ob.sort(data);
+
+		System.out.print("Sorted Data: " );
+		for (int n:data )
+			System.out.print(n + " " );
+
+		System.out.println();
+	}
+}
+
+
+
+
+//==========================================================================
 	/*
 
 	protected void sort(int[] value) 
@@ -129,6 +186,7 @@ public class Test117 extends SortInt117
 		value[j] = temp;
 	}
 	*/
+	/*
 
 	int i, j;
 
@@ -182,3 +240,12 @@ public class Test117 extends SortInt117
 		System.out.println();
 	}
 }
+*/
+
+/*
+
+Source Data: 7 8 3 8 7
+Sorted Data: 3 7 7 8 8
+계속하려면 아무 키나 누르십시오 . . .
+
+*/
