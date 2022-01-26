@@ -121,11 +121,12 @@ class SungjukImpl extends Record implements Sungjuk
 		for (int i = 0;i<rec.length ;i++ )
 		{
 			System.out.println();
-			System.out.printf("%10s %4s " , rec[i].hak, rec[i].name);
-			System.out.printf("%3d %3d %3d " , rec[i].kor, rec[i].eng, rec[i].mat);
-			System.out.printf("%3d %3d", rec[i].tot, rec[i].avg);
+			System.out.println("학번       이름   국어점수 영어점수 수학점수 총점 평균");
+			System.out.printf("%-8s %4s " , rec[i].hak, rec[i].name);
+			System.out.printf("%8d %8d %8d " , rec[i].kor, rec[i].eng, rec[i].mat);
+			System.out.printf("%4d %4d", rec[i].tot, rec[i].avg);
 			System.out.println();
-			System.out.printf("%22s %2s %2s",panjung(rec[i].kor),panjung(rec[i].eng),panjung(rec[i].mat));
+			System.out.printf("%25s %8s %6s",panjung(rec[i].kor),panjung(rec[i].eng),panjung(rec[i].mat));
 		}
 		System.out.println();
 
@@ -133,10 +134,10 @@ class SungjukImpl extends Record implements Sungjuk
 
 
 	// 내부적으로 등급에 대한 판정을 수행할 메소드
-	private String panjung(int score)
+	private String panjung(int s)
 	{
 		String result = "판정 불가";
-		int s = score;
+		//int s = score; //--이딴거 안해도 됨.
 
 		if (s >= 90)
 			result = "수";
