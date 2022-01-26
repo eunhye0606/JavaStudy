@@ -19,6 +19,7 @@ public       O              O               O                O
 
 ②   default vs protected 
      『상속받은 클래스』
+     protected만 가능.
 
 ex) public class Test000
     ______

@@ -3,12 +3,13 @@
 ======================================*/ //이거 다시 확인
 
 // 정보 은닉과 접근 제어 지시자(접근지정자, 접근제한자...)
-
+import java.util.Scanner;
 class CircleTest2
 {
+	int num;
 	void input()
 	{
-		Scanner sc = new Sanner(system.in);
+		Scanner sc = new Scanner(System.in);
 		System.out.print("반지름 입력 : ");
 		num = sc.nextInt();
 	}
@@ -25,12 +26,12 @@ class CircleTest2
 	}
 
 }
+/*
 public class Test100
-
 {
 	public static void main(String[] args)
 	{
-	/*
+	
 
 	// 정보 은닉(Information Hiing)
 	// 멤버 변수,인스터스 변수 ,전역 변수
@@ -74,7 +75,7 @@ public class Test100
 		ob1.setNum;
 
 		//System.out.println("원의 반지름 : " + ob1.num);
-		// cc앞에 printvate로 제한걸어서 못염.
+		// cc앞에 private로 제한걸어서 못염.
 		System.out.println("원의 반지름 : " + ob1.getnum);
 	}	*/
 		ob1. input();
