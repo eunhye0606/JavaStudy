@@ -8,6 +8,7 @@
    일반적으로 클래스는 하나만 존재하는 것이 아니라
    같은 종류의 클래스를 여러개 묶어서 사용하게 되는데
    이러한 클래스나 인터페이스의 묶음을 패키지(package)라고 한다.
+   → 물리적인 묶음 "폴더"
    Sun(Oracle)사에서는 자바 프로그램을
    효율적으로 작성할 수 있도록 자바 표준 패키지를 제공하며,
    자바 표준 패키지에는 그래픽, 네트워크, 데이터베이스 등의
@@ -29,6 +30,7 @@
 
    import [static] 패키지.클래스;
    import [static] 패키지.*;
+   → 여기선 뭐쓰고 저기선 뭐쓸 때가 많아서 static안붙이는 경우가 일반적
 
    ※ JDK 1.5 부터는 import 다음에 『static』 키워드를 붙임으로써
       정적으로 패키지를 import 할 수 있는 기능을 제공하게 되었다.
@@ -45,9 +47,73 @@
    따라서 자바의 모든 클래스는 『java.lang.Object』클래스의
    메소드를 가지고 있으며, 바로 사용하는 것이 가능하다.
 */
-public class Test128
+/*
+import java.lang.*;
+import java.lang.Object;
+→ lang == 랭귀지
+   명시안해도 자동.
+*/
+public class Test128 //extends Object
 {
-	public static void mian(String[] args)
+	/*
+	Object 클래스로부터 상속받은 멤버들
+	...
+	...
+	...
+	toString()
 	{
 	}
+	*/
+	/*
+	public Test128()
+	{
+	}
+	*/
+	public static void main(String[] args)
+	{
+		Test128 ob = new Test128();
+
+		// 객체.xxx();
+		// -- 해당 객체를 생성시키는 대상 클래스의 메소드xxx() 호출
+
+		//Rect ob = new Rect();
+		//ob.input();
+		//-- ob 객체를 생성시키는 대상 클래스 → Rect
+		//   Rect 클래스에 정의되어 있는 input() 메소드 호출
+
+		// 객체.yyy();
+		// -- 해당 객체를 생성시키는 대상 클래스에
+		//    yyy() 메소드가 존재하지 않을 때...
+		//    → 에러 발생
+
+		//System.out.println(ob.test());
+		//--==>>error: cannot find symbol 컴파일 에러
+		// -- Test128클래스에 toString() 메소드가
+		//    존재하지 않는 상황이기 때문에
+		//    에러가 발생 상황
+
+		System.out.println(ob.toString());
+		//--==>>Test128@15db9742
+		//      메모리의 주소값이 아니다.
+		//      이번호는 뭐냐?
+		//      자바 혼자 이거랑 저거랑 다른지 확인할라고
+		//      표시해둔거임!!!!!!!!!!!!! 그냥 값임.
+
+		//      대전제 : 변수하고 자료형 할 때,
+		//      자바는 메모리 주소값에 직접적인 접근을 
+		//      절대로 허용하지 않는다.★
+		//      ------
+
+		// 자바가 객체를 구분하기 위해 임의로 부여하는 식별번호
+		// -- Test128클래스에 toString() 메소드가
+		//    존재하지 않는 상황임에도 불구하고
+		//    에러가 발생하지 않는 상황
+
+
+		System.out.println(ob);
+		//--==>>Test128@15db9742 
+		//      위랑 똑같은 값.
+		// println()메소드도 toSting()을 쓸 수 있음.
+		// toString() 다른애들도 다 가지고 있는 메소드다.
+	}   
 }
