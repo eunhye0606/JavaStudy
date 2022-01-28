@@ -9,11 +9,11 @@ public class Test133
 	{
 
 		boolean bi = true;
-		Boolean wrapBi = new Boolean(bi); // 박싱아님. 인스턴스 생성임.
+		Boolean wrapBi = new Boolean(bi); // 박싱. 인스턴스 생성임.
 		Boolean wBi = bi; // 오토박싱
 
 		int n = 300;
-		Integer wrapN = new Integer(n); //박싱아님. 인스턴스 생성임.
+		Integer wrapN = new Integer(n); //박싱. 인스턴스 생성임.
 		int n2 = wrapN; // 프리미티브형에 객체를 담음. 오토언박싱
 
 		float f = 300.3f;  //접미사f
