@@ -20,13 +20,13 @@ public class Test129 //extends Object
 	...
 	*/
 
-	
+	/*
 	@Override
 	public String toString()
 	{
 		return "재정의한 toString()...";
 	}
-	
+	*/
 
 	public static void main(String[] args)
 	{
@@ -45,3 +45,10 @@ public class Test129 //extends Object
 		// 오버라이딩해서 덮어쓰기 했구나!
 	}
 }
+
+/*
+재정의한 toString()... (오버라이딩 전에는 Test129@15db9742 였음)
+366712642
+재정의한 toString()...
+계속하려면 아무 키나 누르십시오 . . .
+*/

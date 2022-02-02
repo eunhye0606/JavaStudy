@@ -90,7 +90,7 @@ class Test
 	// inner
 	public static class StaticNested	//static
 	{
-		static int c = 30;		//인스턴스
+		int c = 30;		//인스턴스
 		void write()
 		{
 			System.out.println("write().,,");
