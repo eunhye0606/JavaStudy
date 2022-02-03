@@ -1,0 +1,88 @@
+4.자바의 기본 입출력
+Test014.java
+-자바의 기본 입출력 : BufferedReader 클래스
+-버퍼 : 임시기억공간, Like 키보드같은 장치
+-throws IOException : 오류나면 그 오류 메소드 밖으로 던질게 자바
+
+BufferedReader br = new BufferedReader(new InputStreamReaer(System.in)); 
+                                                           -----------
+                                                           바이트 입력값
+                                       ---------------------------------
+                                       바이트 → 문자 번역기
+---------------------------------------
+        문자 입력을 읽어들이는 장치
+br.readLine(); → BufferedReader의 readLine() → 문자열 반환!
+Integer.parseInt() → 매개변수로 넘겨받은 문자열 데이터 → 정수형으로 변환
+단, 이 때 넘겨받은 문자열 데이터는 숫자모양이여야 한다. (NuberFormat)
+
+      
+Test015.java
+-삼각형의 밑변의 길이와 높이를 사용자로부터 입력받아
+ 삼각형의 넓이를 구하는 프로그램 구현
+
+area = (double)length * height /2; //하나만 실수로 바꿔.
+	//area = (double)length * height /2.0; //이게 깐지
+-실수 기반의 연산을 수행해야해서 
+ 나눗셈 연산 : 피연산자 중 하나라도 실수면 실수기반 연산 수행!
+
+Test016.java
+-사용자로부터 이름, 국어점수, 영어점수, 수학점수를 입력받아
+- 이름과 총점을 출력하는 프로그램을 구현한다.
+
+Test017.java
+- 자바의 기본 입출력 : System.int.read()
+  BufferedReader의 readLine()과 비교!
+
+System.in.read() 메소드는 한 문자만 가져온다.
+readLine() 처럼 문자열대기열에 있는거 가져오는 건 같음.
+단 , 입력받은 하나의 문자를 문자 그대로 가져오는 것이 아니라
+ASCII Code 값으로 반환한다.
+즉, 'A'를 입력하면 65로 가져온다! int형으로 변환해서 가져옴!!
+
+-System.in.skip(매개변수);
+ 매개변수만큼 안읽고 건너 뛴다.
+ 엔터 == \r + \n
+
+
+Test019.java
+-자바의 기본 입출력 : java.util.Scaaner
+※ java.util.Scanner
+	 단락 문자 패턴을 사용하여 입력을 토큰에 따라 분할하며
+   디폴트(default)로 사용되는 단락문자는 공백이다.
+   작성된 다음 토큰은 『next()』 메소드를 사용
+   다른 형태(자료형)의 값으로 변환할 수 있다.
+- Scanner는 BufferedReader의 통역기(InputStreaReader)가 없어도 됨!
+- IOException 없어도 됩니다. 인증받은 새끼임.
+
+-sc.next()는 br.readLine()과 같은놈.
+단, Integer.parseInt같은거 하지마.
+    nextInt()가 있지롱
+    별도의 형변환과정이 필요없습니다.
+
+Test020.java
+-import 안하고
+- 매번 java.util.Scanner sc = new java.util.Scanner(System.in);
+  가능하긴한데 할거임? 개귀찮음.
+
+-scanner 공백 구분이 defalt임.
+- 스페이스 무한해도 공백 한개로 인지
+- 엔터도 공백으로 인지
+- 입력값이 부족하면 당연히 안넘어가고 
+- 많으면 뒤로 무시함.
+
+Test021.java
+// System.out.println("\"); -->컴파일에러
+   애초에 저게 안됨. 뒤에 닫는 " 이거 써도 앵 \다음머임??
+   하면서 계~속 문자열로 생각.
+// 왜냐면 자바는 \이거 보고 아 ~ \s ? \d? 이러고 있음.
+// 그래서 \이거 문자로 쓰고 싶으면 \\두개~
+sc = new Scanner(sc.next()).useDelimiter("\\s*,\\s*");
+이제 배우니까 알겠다.
+sc를 초기화함. sc덮어쓰기함. 
+sc = new Scanner(sc.next()).useDelimiter("\\s*,\\s*");
+                            -------------
+                             사용 구분자
+                                         ------------
+                                         모든문자열,모든문자열
+
+→ 즉, 문자열을 콤마로 구분할게!
