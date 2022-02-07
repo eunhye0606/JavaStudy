@@ -74,50 +74,57 @@ public class Test112
 		// name도 하고 score도 해야해유
 
 		//향상된 버블 정렬을 써볼까유 → swap이 발생하면 계속 안하면 중지
-
-		for (int i = 1; i<name.length;i++  )
-		{
-			for (int j = 0;j<name.length-i ;j++ )
-			{	
+			int pass = 0;
+			
+			do
+			{
 				flag = false; // 다시 false로 초기화.
-
-				// 이렇게 되면 큰거는 왼쪽으로 갑니다.
-				if (score[j] <score[j+1])
+				pass++;
+				for (int j = 0;j<inwon-pass ;j++ )
 				{
-					// 점수 자리 바꾸기.
-					score[j] = score[j] ^ score[j+1];
-					score[j+1] = score[j+1] ^ score[j];
-					score[j] = score[j] ^ score[j+1];
-					
+					if (score[j] < score[j+1])
+					{
+						// 점수 자리 바꾸기.
+						score[j] = score[j] ^ score[j+1];
+						score[j+1] = score[j+1] ^ score[j];
+						score[j] = score[j] ^ score[j+1];
 
-					//i번째 이름이랑 점수랑 한차례때 같이 담은거라
-					// 점수 바뀌면서 이름도 바꿔줍니다.
-					/* 
-					name[j] = name[j] ^ name[j+1];
-					name[j+1] = name[j+1] ^ name[j];
-					name[j] = name[j] ^ name[j+1];
-					*/
-					//^ (xor)은 비트연산자에요 ~
-					//String(문자열)이 어떻게 비트로 바뀝니까~~
-					//새로운 변수를 만들어서 옮길게유 ~
-					temp = name[j];
-					name[j] = name[j+1];
-					name[j+1] = temp;
+						//i번째 이름이랑 점수랑 한차례때 같이 담은거라
+						// 점수 바뀌면서 이름도 바꿔줍니다.
+						/* 
+						name[j] = name[j] ^ name[j+1];
+						name[j+1] = name[j+1] ^ name[j];
+						name[j] = name[j] ^ name[j+1];
+						*/
+						//^ (xor)은 비트연산자에요 ~
+						//String(문자열)이 어떻게 비트로 바뀝니까~~
+						//새로운 변수를 만들어서 옮길게유 ~
+						temp = name[j];
+						name[j] = name[j+1];
+						name[j+1] = temp;
 
-					flag = true;//-- 자리이동이 있으면 true			 
-				}
-				if (flag == false)
-				{
-					break;
+						flag = true;//-- 자리이동이 있으면 true
+					}
 				}
 			}
-		}
+			while (flag == true);
+		
 
 		//출력하기
 		System.out.println("--------------");
+		for (int k = 0;k<score.length ;k++ )
+		{
+			System.out.printf("%d등 ",k+1);	
+			System.out.printf("%s ",name[k]);
+			System.out.printf("%3d\n",score[k]);
+
+		}
 		System.out.println("--------------");
 
 
+
+
+//////////////////////////////////////////////////////////
 /* 출력 테스트!
 		for (int i = 0;i<name.length ;i++ )
 		{
@@ -234,3 +241,13 @@ public class Test112
 		*/
 	}
 }
+/*
+--------------
+1등 새 100
+2등 여우  90
+3등 곰  86
+4등 아아메  40
+5등 뽀로로  10
+--------------
+계속하려면 아무 키나 누르십시오 . . .
+*/
