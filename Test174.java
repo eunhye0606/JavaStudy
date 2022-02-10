@@ -66,7 +66,7 @@ public class Test174
 		while((data = System.in.read()) != -1 )	//--System.in.read()를 반복. 한글자씩
 												//  아스키코드 하나씩 읽어옴.
 												// System.in.read(Ctrl+z) == null
-												// null == -1
+												// null == -1 문자열 비교해서 없으면 -1...이거때문인듯
 		{
 			ch = (char)data;
 
@@ -81,7 +81,7 @@ public class Test174
 			°¡³ª´?¶?
 
 			*/
-			
+			// 입력이 System.in.read() : 바이트 기반 → 출력도 바이트 기반 write() 활용!!!!
 
 			// print() : 문자 스트림. 
 			// write() : OutputStream 클래스의 대표적 메소드(→ 바이트 스트림)

@@ -1,0 +1,28 @@
+add → 로컬에 저장
+commit → 로컬
+
+
+push → 깃허브에
+
+===================================================================
+1. c 드라이브에 새 디렉토리 수동생성
+2. 거기서 깃 bash here
+3. 깃 clone //(init 안해도됨)
+4. add . or add 파일명.확장자
+5. commit
+6. push 
+
+
+==================================================================
+
+처음에는 디렉토리 경로 끝에 (origin)
+git brach 하니까 origin 만뜸
+git branch -m eunhye → branch새로 만듬
+git remote로 확인하니 둘다 origin으로 되어있음
+git push origin eunhye하고 나니 브랜치명오타나서
+
+
+git branch -m eunhey eunhye 했음
+근데 이게 원격에 push 전이라 로컬에서만 변경
+그래서 걍 바뀜
+

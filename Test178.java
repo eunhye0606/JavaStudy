@@ -13,7 +13,10 @@ import java.io.IOException;
 
 public class Test178
 {
-	public void process(InputStream is) //System.in을 InputStream으로 업캐스팅해서 매개변수로 줌.
+	public void process(InputStream is) //System.in을 InputStream으로 업캐스팅해서 매개변수로 줌. 안바꾸면 System.in을 그대로쓰나? 
+										// System.in → System클래스의 in 변수 static이구나.
+										// public static final InputStream in
+										// System 객체 안에 InputStream 객체가 이미 있음. 그래서 생성자 new 안해도 가능한것! 자바에서 해줌!
 	{									//InputStream이 조상객체라 이거 가능!
 		int data;
 		System.out.println("문자열 입력(종료:Ctrl+z)");
