@@ -65,7 +65,7 @@ class SuperMenu
 	vdCustom()//야채 커스텀();
 	{
 		n = 1
-		vdArray = 
+		vdArray = 0101
 		커스텀옵션확인()
 		pritn(야채)
 	scCustom()//소스 커스텀();
@@ -133,7 +133,7 @@ class Bread extends SuperMenu
 	{
 		bcSelect();//breadCategory빵종류 select(디폴트 n) //에그마요, BMT 등등
 		blSelect()//breadLength빵길이();
-		vdCustom()//야채 커스텀();
+		super.vdCustom()//야채 커스텀();
 		super.scCustom()//소스 커스텀();
 		super.ccSelect()//치즈여부선택하기();
 		super.addCount();//개수추가메소드();
@@ -143,8 +143,8 @@ class Bread extends SuperMenu
 	bcSelect()(int DefaultMenu.dmOption) // 매개변수 보류 ★
 	{
 		if n == 1
-		this. bCategory = 에그마요
-		this.bPrice= 4500
+		this. final bCategory = 에그마요
+		this.bPrice= 4500 final
 		
 		else if n ==2
 		this bCategory = BMT
@@ -152,7 +152,7 @@ class Bread extends SuperMenu
 	}
 	blSelect()
 	{
-		bLength 15? 30? 
+		bLength 15? 30? final
 		this.bLength = 사용자 입력값;
 	}
 
@@ -243,6 +243,7 @@ class SideMenu extends CustomArray implements 유효성검사.
 		} 
 		else if (2 ) // 맥주
 		{
+			@OVerride
 			adultCertification(); boolean 반환
 			if (true)
 			{
@@ -264,9 +265,9 @@ class SideMenu extends CustomArray implements 유효성검사.
 } 
 class OrderRecord
 {
-	breadArrayList ... = {빵1, 빵2, 빵3} → static 할지안할지 생각해라
-	salad = {샐러드1, 샐러드 2....} // static 보류
-	sidemenuArrayList = {사이드메뉴1,사이드메뉴2...}; 
+	breadArrayList ...// = {빵1, 빵2, 빵3} → static 할지안할지 생각해라
+	salad =// {샐러드1, 샐러드 2....} // static 보류
+	sidemenuArrayList// = {사이드메뉴1,사이드메뉴2...}; 
 
 		/*
 		set빵길이(int n)
@@ -292,7 +293,7 @@ class Ingredient //재료클래스
 		//야채={100, 100, 100}; //토마토 양상추 양파 개수
 		//야채[0] --;
 		//야채[1] --;
-	
+		토마토, 100 
 		Hashmap <야채종류><개수> vegetable[] = ~~~~ 
 		Hashmap <소스종류><횟수> sauce[]= ~~~~ 
 		cheese[] {100 100 100} // 위에서 치즈 = 1 이면 치즈[0] --;
