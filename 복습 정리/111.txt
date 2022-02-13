@@ -1,0 +1,32 @@
+boolean checkMembership() throws IOException
+	{
+		boolean isMembership;
+		while(true)
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			//멤버십 번호를 입력받고나서 있는지 없는지 검사
+			//(main에 있을 더미데이터 이용)
+			System.out.print("멤버쉽 번호를 입력하세요 : ");
+			int memberNum = Integer.parseInt(br.readLine());
+
+			// memberNum이 Customer에 있으면,
+			
+			
+			//멤버십번호 입력 >>> 4명의 멤버십 번호와 다 일치하는지 검사.
+			for(Customer c : main.ct) // main.ct → main안에 Customer ct를 하나씩 불러오면서 검사
+			{
+				isMembership = (memberNum == c.memberNumber); // 입력받은 멤버쉽 번호와 더미데이터의 멤버쉽번호가 일치하는지 확인.
+				                                             // 일치하면 isMembership = true
+				if(isMembership)
+					System.out.println("멤버쉽이 확인되었습니다");
+			}
+
+			if(!isMembership)
+			{
+				return false;
+			}
+			// while true기 때문에 멤버십 있든 없든 일단 나와야해서 break;
+			break;
+		}
+		return isMembership;
+	}
