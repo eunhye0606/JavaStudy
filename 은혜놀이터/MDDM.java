@@ -27,15 +27,15 @@ class MDDM
 		{
 			ali1.add(mddmMember[i]);
 		}
-		System.out.println(ali1);
+		//System.out.println(ali1);
 
-		
+		/*
 		ArrayList<String> ali2 = new ArrayList<String>();
 		for (int i = 0;i<position.length ;i++ )
 		{
 			ali2.add(position[i]);
 		}
-		
+		*/
 		
 
 		System.out.println("【새로 조정된 " +year + "년도 무딱모 직책을 발표합니다.】");
@@ -44,10 +44,10 @@ class MDDM
 			for (int i = 0 ;i<mddmMember.length ;i++ )
 			{
 				n1 = rd.nextInt(ali1.size());
-				n2 = rd.nextInt(ali2.size());
-				System.out.printf("\t%s님의 직책은 %s입니다.",ali1.get(n1),ali2.get(n2));
+				//n2 = rd.nextInt(ali2.size());
+				System.out.printf("\t%s님의 직책은 %s입니다.",ali1.get(n1),position[i]);
 				ali1.remove(n1);
-				ali2.remove(n2);
+				//ali2.remove(n2);
 				System.out.println();
 				System.out.println();
 			}
